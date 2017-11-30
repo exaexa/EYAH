@@ -17,11 +17,13 @@ categorization of the exercises.
 
 ### Available metadata
 
-- `level` can be one of `beginner` `simple` `intermediate` `challenging` `advanced` and `insane`
-- `tag` can be any space-separated list of stuff, tags are hierarchical using a slash (e.g. tags `types/dependent` subsumes tag `types`)
+- `level` can be one of `beginner` `simple` `intermediate` `challenging`
+  `advanced` and `insane`
+- `tag` can be any space-separated list of stuff, tags are hierarchical using a
+  slash (e.g. tags `types/dependent` subsumes tag `types`)
 - `lyah` is the path to corresponding LYAH chapter (a better form of tag)
 
-(it's probably too early to decide on this yet though)
+(it's probably too early to decide on this though)
 
 ### Exercise example
 
@@ -30,27 +32,29 @@ Simple exercise from the first chapter:
 ```
 # Compute circle area
 
-Know there is a constant called `pi` available in the prelude, compute an area of the circle with diameter 33 feet.
+Know there is a constant called `pi` available in the prelude, compute an area
+of the circle with diameter 33 feet.
 
 # Meta
 
 - level: beginner
+- lyah: Starting Out/Ready, Set, Go!
 ```
 
-Advanced, well-tagged exercise from yet-unpublished chapter is stored in
-`66_finishing/halt.md`:
+Advanced, well-tagged exercise from yet-unpublished chapter:
 
 ```
 # Solve halting problem.
 
 Using what we learnt so far, write an oneliner function of type
-`TuringMachine->Input->()` that terminates if and only if the given turing
-machine does not terminate on given input.
+`TuringMachine -> TMInput -> ()`
+that terminates if and only if the given turing machine does not terminate on
+given input.
 
 # Meta
 
 - level: intermediate
-- tag: decidability theory
+- tag: decidability theory turing_machines
 ```
 
 ## Contributing
