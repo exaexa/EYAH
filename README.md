@@ -1,6 +1,5 @@
 
-# Exercise Yourself a Haskell
-## for Great Profit!
+# Exercise Yourself a Haskell for Great Profit
 
 This is intended as a lightly curated repository of Haskell exercises grouped
 by topic. You are welcome to add anything and send a pull request, we'll
