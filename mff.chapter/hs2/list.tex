@@ -1,0 +1,33 @@
+\exercise{level=1}{Lists are data}{
+To see how lists work, define your own datatype for lists (similarly as in
+Scheme or Prolog, list is defined as either an empty list, or a tuple of list
+element and the rest of the list.\footnote{Default Haskell lists use
+\texttt{[]} and \texttt{(:)} for this purpose.}
+
+Write two simple conversion functions between your lists and Haskell lists.
+}
+\exercise{level=1}{Zips and tuples}{
+Define your own version of function \texttt{zipWith} using \texttt{map}, \texttt{zip} and \texttt{uncurry}.
+}
+\exercise{level=1}{Tuples and zips}{
+In the same way, define your own version of \texttt{zip} using \texttt{zipWith}.
+}
+\exercise{level=2}{Zips.Tuples}{
+You can compose functions using the dot operator. \texttt{(f.g) x} is defined
+to be the same as \texttt{f (g x)}. Redefine your version of \texttt{zipWith}
+using this operator so that there is no variable for the list in the
+definition\footnote{This is called point-free style. There are relevant jokes
+about confusing it with pointless style.}:
+
+\texttt{zipWith' fn = ...}
+}
+\exercise{level=2}{What is a map?}{
+Define your own version of \texttt{map} using \texttt{foldr}.
+
+Find out an expression where your definition of \texttt{map} would not work if
+you had used \texttt{foldl} for the definition.
+}
+\exercise{level=2}{Parameter order}{
+Search for reasons why arguments of standard fold-type functions are ordered as
+they are. (I.e. not like \texttt{foldl [1,2,3] (+) 0}).
+}

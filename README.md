@@ -10,51 +10,31 @@ nice forms.
 
 There is a directory structure that roughly corresponds to the structure of
 Learn Yourself A Haskell. Files in each directory are exercises. Exercises are
-formatted as markdown, with some metadata. Metadata are in section 'Meta' as a
-single list. It will eventually be used in the view to provide a better
-categorization of the exercises.
+formatted as TeX commands: `\exercise{metadata}{Name}{text}`.
+
+### Sorting exercises to sections
+
+In the book, exercises will appear in directory order. Each directory can have
+a `_dir.tex` file that is included before all exercises in the directory. This
+is used to separate the contents into sections, add some explanations around,
+etc.
 
 ### Available metadata
 
-- `level` can be one of `beginner` `simple` `intermediate` `challenging`
-  `advanced` and `insane`
+- `level` is a number from 0 to infinity
 - `tag` can be any space-separated list of stuff, tags are hierarchical using a
   slash (e.g. tags `types/dependent` subsumes tag `types`)
-- `lyah` is the path to corresponding LYAH chapter (a better form of tag)
 
-(it's probably too early to decide on this though)
+Use in combination, e.g. `\exercise{level=4
 
-### Exercise example
+(This is not processed yet, but will be.)
 
-Simple exercise from the first chapter:
+## Getting the result
 
-```
-# Compute circle area
+Run `./maketex.sh`, if everything goes just right, you should receive an
+A5-book of haskell exercises in `tex\_out/eyah.pdf`.
 
-Know there is a constant called `pi` available in the prelude, compute an area
-of the circle with diameter 33 feet.
-
-# Meta
-
-- level: beginner
-- lyah: Starting Out/Ready, Set, Go!
-```
-
-Advanced, well-tagged exercise from yet-unpublished chapter:
-
-```
-# Solve halting problem.
-
-Using what we learnt so far, write an oneliner function of type
-`TuringMachine -> TMInput -> ()`
-that terminates if and only if the given turing machine does not terminate on
-given input.
-
-# Meta
-
-- level: intermediate
-- tag: decidability theory turing_machines
-```
+There will be a script that transforms this thing into a github page.
 
 ## Contributing
 

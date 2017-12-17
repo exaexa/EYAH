@@ -1,0 +1,23 @@
+\exercise{level=3}{Mappable}{
+The typeclass that implements overloaded function mapping is called
+\texttt{Functor} (just as Foldable implements overloaded list-like behavior).
+Implement the instance for your tree structure.
+}
+\exercise{level=3}{Computation complexity}{
+Define a type \texttt{OpCnt a} that represents a value of type \texttt{a}
+accompanied with a counter that represents how many numerical operations were
+needed to compute that number.
+
+Implement its instance of \texttt{Num} that keeps track of the minimal number
+of operations required to get the result (this is sometimes called ``expression
+depth'').
+}
+\exercise{level=3}{Computation complexity 2}{
+Can the operation-tracking type be a functor that would track the number of
+externally applied functions? Implement the instance and invent a short example
+where the counter reports something fishy.
+}
+\exercise{level=3}{Functors 1 2 3}{
+Reimplement functor operators \texttt{(<\$)} and \texttt{(\$>)}. To remain
+point-free, consider using \texttt{flip}, \texttt{fmap} and \texttt{const}.
+}

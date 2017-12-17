@@ -1,0 +1,15 @@
+\exercise{level=0}{Fibonacci}{%
+There has to be one Fibonacci in every programming textbook. Write a function that returns a list of all Fibonacci numbers. Remember the recursive definition of Fibonacci numbers: The `amount of state' required for knowing next number in the sequence is exactly 2 integers; after you generate the next number you can also easily produce a new state (that can subsequently be used for producing the next number, etc.).
+}
+\exercise{level=1}{Fibonacci 2}{%
+Google up the definition of infinite list of Fibonacci numbers that uses \texttt{zipWith}. If offline, it is here:
+
+\texttt{fibs = 0:1:zipWith (+) fibs (tail fibs)}
+
+Knowing that Haskell can remember the (partial) value of a top-level definition and re-use it whenever the definition is used, try to draw yourself a diagram of how the function is actually evaluated.
+}
+\exercise{level=1}{Diffonaci}{%
+There are more odd Fibonacci numbers than even ones. Write a function that
+returns an infinite list which, on its $i$-th position, contains a value of
+$i$-th odd Fibonacci number minus $i$-th even Fibonacci number.
+}

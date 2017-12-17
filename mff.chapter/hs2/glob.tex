@@ -1,0 +1,15 @@
+\exercise{level=1}{Glob datatype}{%
+Define a data type for glob patterns. It is basically a list of elements that
+either match an exact character, or act as glob `?' (any one letter), or a glob
+`*' (zero to any number of any letters). Write a function \texttt{char2glob}
+that converts a single character of a glob pattern to your new datatype.
+Converting strings to lists of glob patterns should then be implementable like
+this:
+
+\texttt{string2glob = map char2glob}
+}
+\exercise{level=2}{Glob matching}{%
+Write a function \texttt{matchGlob} that takes a glob pattern and a string, and
+decides whether the string matches the pattern. Use a recursion scheme that
+consumes both the pattern list and the string together.
+}

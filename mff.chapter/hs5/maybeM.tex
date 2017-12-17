@@ -1,0 +1,40 @@
+\exercise{level=1}{And then?}{
+Let's have a lookup function that finds something in an associative list, if it is there:
+
+\texttt{lookup1 :: Eq k => k -> [(k,v)] -> Maybe v}
+
+Implement a function that takes two keys, and returns a value at the position
+\texttt{lookup1 k1 l + k2} (or Nothing if any of the required indices is not
+present).
+
+Implement the same function for three keys as \texttt{lookup3} (with the
+difference that the \texttt{k3} is subtracted from the previous result to get
+the next index), and for four keys as \texttt{lookup4} (\texttt{k4} is
+multiplied with the previous result to get the index).
+
+Find a repetitive pattern.
+}
+\exercise{level=2}{Aaand theeen?}{
+Implement function that can take optional value on the left, and either pass
+its value to function on the right and return the result, or, in case of
+missing value, return the missing value:
+
+\texttt{andThen :: Maybe a -> (a -> Maybe b) -> Maybe b}
+}
+\exercise{level=2}{And... Then?}{
+Use construction
+
+\texttt{computation1 `andThen` \textbackslash result1 -> computation2}
+
+to reimplement the \texttt{lookup4} function.
+}
+\exercise{level=3}{And Then?!}{
+Replace \texttt{andThen} in previous exercise by \texttt{>{}>=} and explain the
+result.
+}
+\exercise{level=3}{And Finally.}{
+Use the \texttt{do}-notation to remove lambdas from the previous exercise.
+}
+\exercise{level=4}{MaybeM}{
+Reimplement \texttt{Monad} instance of \texttt{Maybe}.
+}

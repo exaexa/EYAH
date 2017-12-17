@@ -1,0 +1,58 @@
+\exercise{level=4}{Random state}{%
+Implement a monad that keeps random number generator state. Use e.g. the
+generator from \texttt{man 3 rand}.
+
+\begin{itemize}
+\item Represent every random computation as a function from initial internal
+state of the random number generator to a new internal state and the result of
+computation:
+
+\texttt{data RandM a = RandM (Int->(a,Int))}
+
+\item Define a function \texttt{runRand} which executes the computation in
+\texttt{RandM a} with some user-supplied seed, and extracts and returns the
+result of type \texttt{a}.
+
+\item Define a \texttt{RandM} computation called \texttt{rand} that takes a
+seed and returns a generated random value and an updated seed.
+
+\item Define a function \texttt{randSeq} that takes two \texttt{RandM}
+computations and chains them --- constructs a new \texttt{RandM} which, given a
+seed, runs the first \texttt{RandM} and feeds the resulting seed to the second
+\texttt{RandM}.
+\end{itemize}
+}
+
+\exercise{level=4}{Random bind}{%
+Similarly as with \texttt{randSeq} from the previous exercise, implement:
+
+\texttt{randThen :: RandM a -> (a -> RandM b) -> RandM b}
+
+The function passes the `return value' of the first computation as a parameter
+to the function, which in turn returns second \texttt{RandM} computation. The
+second computation receives receives the updated seed from the first
+computation, to simulate that the computations are sequenced.
+
+Observe the similarity with \texttt{andThen}.
+}
+\exercise{level=4}{Random return}{%
+Write a function \texttt{randRet} that takes a value and returns a random
+computation which does not change the random seed, but returns the given value.
+}
+\exercise{level=4}{Random monad}{%
+Using \texttt{randThen} and \texttt{randRet}, define the \texttt{Monad} instance of \texttt{RandM}.
+}
+\exercise{level=3}{Compute $\pi$}{%
+Using your new monad for generating random numbers, establish the value of
+$\pi$. Preferred method is to throw a pile of small stones on a square area
+with inscribed circle, and count the ratio of stones that landed inside of the
+circle.
+}
+\exercise{level=4}{State}{
+The RandM monad stores a single integer with state. We can generalize the concept to any type of the state:
+
+\texttt{data StateM s a = StateChange (s -> (a,s))}
+
+Write a monad instance for \texttt{StateM s}, together with appropriate
+functions for getting and setting the state, and running the \texttt{StateM}.
+}

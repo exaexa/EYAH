@@ -1,0 +1,78 @@
+\exercise{level=1}{Pascal triangle as a tree}{
+Define a data structure for the Pascal triangle viewed as a tree. Going to the
+left branch means that your view of the triangle shifts to the lower-left
+subtriangle, same with going to the right branch.
+
+Notice that this structure has some redundancy in it: going left/right is the
+same as going right/left.
+}
+\exercise{level=1}{Pascal triangle}{
+Create a function that returns $n$-th level of a Pascal triangle as a list. Use
+recursion --- create $n$-th level from $(n-1)$-th level, starting from $[1]$.
+
+Materialize an infinite list of Pascal triangle levels (so that Haskell can
+memoize it).
+}
+\exercise{level=2}{Pascal tree}{
+Fill up the structure for the Pascal tree using the data from your function for
+Pascal triangle levels.
+}
+\exercise{level=1}{Tree pattern matching}{
+Write a function that returns an element from given tree that is obtained by
+going from root node two times to the left child node, and then two times to
+the right child node. Use pattern matching to make it look graphical.
+
+For example, applied to the Pascal tree it should return number 6.
+}
+\exercise{level=2}{Treeception}{
+Let's formalize decision making of taking left and right turns: From given tree
+$T$, create a tree that, in the root, contains the tree $T$. For each element,
+left/right child nodes of element contain the left/right subtree of the parent
+element's contained tree (or Nil if there's nothing).
+
+Decide why such structure is completely unnecessary for trees.
+}
+\exercise{level=2}{Blackjack (lumber edition)}{
+TODO -- this desperately needs a rewrite.
+
+You receive a deck of cards as a list with their numerical values (e.g.
+[1,2,3,...,10,10,10]). Assume one player plays a simple
+(dumb) variant of Blackjack, taking cards repeatedly from this deck, with two
+possible decisions before each card: Take a next card (any number he wants,
+until his sum us less than 21), or finish and start a next game with the new
+card (from the same deck). Game ends when there are no cards in the deck left.
+
+Scoring is as such: A victory happens if the player hits 21 (automatically) or
+if he finishes the game and his sum is higher than the sum of next 2 cards in
+the deck (these are discarded; if there aren't enough cards in the deck, less
+is taken). Victory increases the score by +2 points, loss (overshooting 21)
+decreases the score by 1 point.
+
+Materialize a complete decision tree of the players action (left = take next
+card, right=go for the next game). In the elements, the tree should contain
+total score of the player so far, cards he currently holds in the hand, and
+cards that are left in the deck.
+}
+\exercise{level=1}{Pseudorandom permutation}{
+Assume you receive a sufficiently large pseudorandom number. Use it to generate
+a corresponding pseudorandom permutaion of the list you receive.
+
+As always, note that there is no randomness in computers.
+}
+\exercise{level=2}{Blackjack (bad statistics edition)}{
+Randomly permute the Blackjack `cards' several times to collect a statistic
+about final player scores. Decide on what path of going through the tree would
+score best on average.
+}
+\exercise{level=2}{Blackjack (quitter edition)}{
+Player can quit the game whenever he wants, before finishing the deck, taking
+the score he has. Decide the sub-path to the statistically best score.
+}
+\exercise{level=2}{Blackjack (better statistics edition)}{
+Convert the statistics from the tree to a table that, depending on what sum the
+player currently has on hand, advises him whether it is better to take a next
+card or check for victory.
+}
+\exercise{level=2}{Blackjack (not-a-normal-distribution edition)}{
+Measure the optimal ratio between taking next card and finishing the hand.
+}

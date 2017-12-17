@@ -1,0 +1,45 @@
+\exercise{level=2}{Nice vectors}{
+Take \texttt{data V3 a = V3 a a a}. The auto-derived instance of \texttt{Show}
+does not look very mathematical in this case, derive an instance of
+\texttt{Show} that displays the vector as 3 elements in square brackets.
+}
+\exercise{level=2}{Infinity integers}{
+Let's enrich the integers with infinity:
+
+\texttt{data InfInt = Finite Integer | PlusInf | MinusInf}
+
+Write an instance of \texttt{Show} that displays finite integers as normal
+integers, and outputs something reasonable for the infinite values.
+}
+\exercise{level=2}{Infinity compared}{
+Derive instances for \texttt{Eq} and \texttt{Ord} for the \texttt{InfInt}.
+}
+\exercise{level=2}{Small cyclic groups}{
+Take \texttt{data Z7 = Z7 Int deriving Show}. Define instance \texttt{Num Z7}
+to allow using standard operators with elements $Z_7$.\footnote{In $Z_7$, all
+operations behave like on integers modulo 7.}
+}
+\exercise{level=3}{Smaller cyclic groups}{
+If you haven't already, redefine the whole instance \texttt{Num Z7} as
+point-free: That is best done by using a `lifting' function that takes an
+operator/function that works on integers and converts it to work on $Z_7$.
+
+In result, you should have e.g. the following definitions in the instance:
+\texttt{(+) = z7lift2 (+)}.
+}
+\exercise{level=3}{Mappable}{
+The typeclass that implements transparent mapping is called \texttt{Functor}
+(just as Foldable implemented list-like behavior). Implement it for your tree
+structure.
+}
+\exercise{level=2}{$Z_7$ is wrong}{
+Find two reasons why \texttt{Z7} can not be an instance of \texttt{Functor}:
+one type-theoretic, one algebraic.
+}
+\exercise{level=3}{Computation complexity}{
+Define a type that represents a value accompanied with a counter that
+represents how many numerical operations were needed to compute that number.
+
+Implement its instance of \texttt{Num} that keeps track of the minimal number
+of operations required to get the result.
+}

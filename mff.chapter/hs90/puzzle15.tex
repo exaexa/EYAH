@@ -1,0 +1,14 @@
+\exercise{level=3}{15-puzzle}{
+Solve the 15 puzzle --- 15 numbered square tiles randomly positioned in a 4x4
+square with one `hole', where you are supposed slide the tiles around (using
+the space given by the hole) to permute them back to a sorted sequence.
+
+Use a reasonable heuristic:
+\begin{itemize}
+\item Measure the sum of distances of the slides from their target positions and explore the most promising moves first.
+\item Reduce search breadth. Solve the first row first, then stop touching it
+and solve the second row, etc.
+\end{itemize}
+
+Note that half of the permutations can not be solved.
+}

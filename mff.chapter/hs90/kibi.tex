@@ -1,0 +1,59 @@
+\exercise{level=5}{Kalotan puzzle}{
+This exercise is taken and modified from `Teach Yourself Scheme in Fixnum Days':
+
+\begin{quote}
+The Kalotans are a tribe with a peculiar quirk. Their males always tell the
+truth. Their females never make two consecutive true statements, or two
+consecutive untrue statements.
+
+An anthropologist (let's call him Worf) has begun to study them. Worf does not
+yet know the Kalotan language. One day, he meets a Kalotan (heterosexual)
+couple and their child Kibi. Worf asks Kibi: ``Are you a boy?'' Kibi answers in
+Kalotan, which of course Worf doesn't understand.
+
+Worf turns to the parents (who know English) for explanation. One of them says:
+``Kibi said: `I am a boy.' '' The other adds: ``Kibi is a girl. Kibi lied.''
+
+Solve for the sex of the parents and Kibi.
+\end{quote}
+
+While this makes a brilliant exercise for Prolog and a very interesting venue
+for \texttt{call/cc} in Scheme, Haskell does not have very good facilities for
+dealing with this kind of exercise directly.
+
+Nevertheless, nondeterminism can be provided by several different types of
+monads. Use any of them to simulate Prolog-ish behavior in Haskell.
+
+Atop that, create reasonable functions that allow you to describe who said what
+(including lists of statements!) and whether it is true or not. Attempt to
+compress the `final' problem description to a piece of code as condensed and
+semantic as possible. Try matching the simplicity of Prolog code in
+\autoref{fig:kalotanProlog}.
+}
+\begin{figure}
+\centering
+\begin{minipage}{\textwidth}
+\begin{verbatim}
+solve(Kibi, P1, P2) :-
+  % create a world
+  truthval(KibiLies),
+  sex(Kibi),
+  sex(P1),
+  sex(P2),
+  not(P1 = P2),
+  
+  % says(?Who,?ListOfSentences,?TruthVals)
+  % parent 1 says that Kibi says that
+  % Kibi is male (also see whether Kibi lied)
+  says(P1,
+       [says(Kibi, [Kibi=male],
+                   [KibiLies])], _),
+
+  % parent 2 says that Kibi is female
+  % and that Kibi lies
+  says(P2,
+       [Kibi=female, KibiLies=yes], _).
+\end{verbatim}
+\end{minipage}\caption{Final piece of Kalotan puzzle solution in Prolog.}
+\label{fig:kalotanProlog}
+\end{figure}

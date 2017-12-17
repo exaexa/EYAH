@@ -1,0 +1,16 @@
+
+\exercise{level=3}{Regex}{
+Write a function that parses a regular expression string that may contain:
+\begin{itemize}
+\item single characters
+\item any character mark (dot, `.')
+\item parentheses
+\item or (`|')
+\item Kleene star
+\end{itemize}
+The function produces a new function of type \texttt{String -> Bool}, which
+answers whether given string matches the original regular expression pattern.
+
+Do not care about escaping of regular expression tokens. Also do not care about
+matching complexity --- it is expected to be exponential in ugly cases.
+}
