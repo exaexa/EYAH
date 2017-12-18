@@ -25,7 +25,7 @@ etc.
 - `tag` can be any space-separated list of stuff, tags are hierarchical using a
   slash (e.g. tags `types/dependent` subsumes tag `types`)
 
-Use in combination, e.g. `\exercise{level=4
+Use in combination, e.g. `\exercise{level=4,tag=type and that}{...}{...}`
 
 (This is not processed yet, but will be.)
 

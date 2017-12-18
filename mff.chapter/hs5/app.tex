@@ -10,12 +10,13 @@ Observe why binary trees do not make good \texttt{Applicative} instances.
 }
 \exercise{level=3}{Simple applicatives}{
 Write and examine \texttt{Applicative} instance for \texttt{Maybe} (where
-texttt{Nothing} applied to anything is again nothing) and \texttt{Either}
+\texttt{Nothing} applied to anything is again nothing) and \texttt{Either}
 (where \texttt{Left} works as \texttt{Nothing} with an explanation).
 }
 \exercise{level=4}{Symmetric Either}{
-Standard \texttt{Applicative} instance for \texttt{Either} discards one `error
-message' if both parameters of \texttt{(<*>)} are \texttt{Left}.
+Standard \texttt{Applicative} instance for \texttt{Either} discards one
+\texttt{Left} `error message' if both parameters of \texttt{(<*>)} are
+\texttt{Left}.
 
 Find a good reason for that. Specifically, what would happen if we would also
 collect the error from the right side of \texttt{(<*>)}?

@@ -1,6 +1,6 @@
 \exercise{level=4}{Random state}{%
 Implement a monad that keeps random number generator state. Use e.g. the
-generator from \texttt{man 3 rand}.
+generator from \texttt{man 3 rand} (see \autoref{fig:man3rand}).
 
 \begin{itemize}
 \item Represent every random computation as a function from initial internal
@@ -22,6 +22,19 @@ seed, runs the first \texttt{RandM} and feeds the resulting seed to the second
 \texttt{RandM}.
 \end{itemize}
 }
+\begin{figure}
+\centering
+\begin{minipage}{.9\textwidth}
+\begin{verbatim}
+int myrand(void) {
+    next = next * 1103515245 + 12345;
+    return((unsigned)(next/65536) % 32768);
+}
+\end{verbatim}
+\end{minipage}
+\caption{A relatively successful random number generator.}
+\label{fig:man3rand}
+\end{figure}
 
 \exercise{level=4}{Random bind}{%
 Similarly as with \texttt{randSeq} from the previous exercise, implement:
