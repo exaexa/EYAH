@@ -1,0 +1,23 @@
+\exercise{level=0}{Expressions}{
+Haskell expressions contain terms, operators and applications. Any function
+name can be converted to an operator using backtics (e.g. \texttt{elem a b} to
+\texttt{a `elem` b}), any operator can be converted to a prefixed function name using
+parentheses (e.g. \texttt{1+2} to \texttt{(+) 1 2}).
+
+Take a formula for roots of quadratic equation and convert all operators to
+prefixes.
+
+Which functions are better written in `infix` form?
+}
+\exercise{level=0}{Expression types}{
+Haskell does not support automatic conversion of types: Find out why expression
+
+\texttt{1/4+3}
+
+works, but
+
+\texttt{1/4+(3::Integer)}
+
+fails with a type error. Fix the type error using a manual type conversion, so
+that the literal 3 remains Integer.
+}
