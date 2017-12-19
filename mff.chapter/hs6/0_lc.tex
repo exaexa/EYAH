@@ -1,0 +1,76 @@
+\exercise{level=1}{Lambdas}{
+Design a simple datatype for storing expressions $\lambda$-calculus,
+parametrized by the type of variable identifiers.
+
+The grammar is as follows:
+$$ \Lambda \rightarrow \Lambda\Lambda | (\lambda v_i.\Lambda) | v_i \qquad (\forall i)$$
+}
+\exercise{level=1}{Variables}{
+Write a function that extracts all free (unbound) variables of a
+$\lambda$-expression.
+}
+\exercise{level=3}{Sets of variables}{
+Use Data.Set for the previous exercise, if you didn't do it already.
+}
+\exercise{level=1}{Unbound variables}{
+Write a funciton that generates a String variable name that is not free in
+given expression.
+}
+\exercise{level=2}{Unbound variables 2}{
+Write a function that can generate such a variable name for a larger class of
+variable-identifier types (e.g. Enum).
+}
+\exercise{level=3}{Enumerated identifiers}{
+Write an Enum instance that can enumerate string-like variable identifiers (for
+easily finding new variable names).
+}
+\exercise{level=1}{Normal form}{
+Determine whether given $\lambda$-expression is in normal form (i.e. it can not
+be $\beta$-reduced anymore.
+}
+\exercise{level=2}{Substitution safety}{
+Write a function that performs substitution.
+
+Note that you must not substitute a term with free variable $v$ if the variable
+is bound by another lambda in that context. In that case, change the variable
+identifier of the conflicting binding.
+}
+\exercise{level=2}{Lambda machine}{
+Converts a lambda expression to a normal form using $\beta$-reductions. Ensure
+that you evaluate the expression lazily --- always starting with the leftmost
+possible redex.
+
+Note that this may not terminate in all cases (try with
+$\Omega=(\lambda x.xx)(\lambda x.xx)$).
+}
+\exercise{level=3}{Limited lambda machine}{
+Write a similar function that stops if a normalized expression is not reached
+after given number of $\beta$-reductions.
+}
+\exercise{level=1}{Logicians kindof love integers!}{
+$\lambda$-integers are represented as iterative function appliers:
+$n \simeq (\lambda fx.f^n x)$. For example, number 3 is represented as
+$(\lambda fx.f(f(f x)))$.
+
+Write a function that converts Haskell integers to $\lambda$-integers.
+}
+\exercise{level=1}{Integer terms 2}{
+Write a function that converts $\lambda$-expressions that look like
+$\lambda$-integers to \texttt{Maybe Integer}.
+}
+\exercise{level=3}{Integer terms 3}{
+Implement addition as $(\lambda abfx.(af)(bfx))$,
+multiplication as $(\lambda abf.a(bf))$
+and exponentiation as $(\lambda ab.ba)$.
+
+Write a function that computes $a^2+2ab+b^2$ and compute that for
+$(a,b)=(3,4)$.
+}
+\exercise{level=3}{Efficiency first}{
+Measure the number of $\beta$-reductions required to run the previous
+computation.
+}
+\exercise{level=4}{EfficiencyM}{
+Beancounting from the previous exercise makes a good reason for using a State
+monad. Rewrite the evaluating functions counters to \texttt{State Integer}.
+}
