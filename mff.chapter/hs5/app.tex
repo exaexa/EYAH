@@ -1,4 +1,4 @@
-\exercise{level=3}{Apply-ish tree}{
+\exercise{lambdas=1}{Apply-ish tree}{
 Let's say we have a tree of unary functions and a tree of values from their
 domain.
 
@@ -8,12 +8,12 @@ values processed by the function.
 
 Observe why binary trees do not make good \texttt{Applicative} instances.
 }
-\exercise{level=3}{Simple applicatives}{
+\exercise{pencils=1}{Simple applicatives}{
 Write and examine \texttt{Applicative} instance for \texttt{Maybe} (where
 \texttt{Nothing} applied to anything is again nothing) and \texttt{Either}
 (where \texttt{Left} works as \texttt{Nothing} with an explanation).
 }
-\exercise{level=4}{Symmetric Either}{
+\exercise{lambdas=1,stars=1}{Symmetric Either}{
 Standard \texttt{Applicative} instance for \texttt{Either} discards one
 \texttt{Left} `error message' if both parameters of \texttt{(<*>)} are
 \texttt{Left}.

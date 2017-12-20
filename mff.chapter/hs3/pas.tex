@@ -1,4 +1,4 @@
-\exercise{level=1}{Pascal triangle as a tree}{
+\exercise{}{Pascal triangle as a tree}{
 Define a data structure for the Pascal triangle viewed as a tree. Going to the
 left branch means that your view of the triangle shifts to the lower-left
 subtriangle, same with going to the right branch.
@@ -6,25 +6,25 @@ subtriangle, same with going to the right branch.
 Notice that this structure has some redundancy in it: going left/right is the
 same as going right/left.
 }
-\exercise{level=1}{Pascal triangle}{
+\exercise{}{Pascal triangle level}{
 Create a function that returns $n$-th level of a Pascal triangle as a list. Use
 recursion --- create $n$-th level from $(n-1)$-th level, starting from $[1]$.
 
 Materialize an infinite list of Pascal triangle levels (so that Haskell can
 memoize it).
 }
-\exercise{level=2}{Pascal tree}{
+\exercise{}{Pascal tree}{
 Fill up the structure for the Pascal tree using the data from your function for
 Pascal triangle levels.
 }
-\exercise{level=1}{Tree pattern matching}{
+\exercise{pencils=1}{Tree pattern matching}{
 Write a function that returns an element from given tree that is obtained by
 going from root node two times to the left child node, and then two times to
 the right child node. Use pattern matching to make it look graphical.
 
 For example, applied to the Pascal tree it should return number 6.
 }
-\exercise{level=2}{Treeception}{
+\exercise{stars=1}{Treeception}{
 Let's formalize decision making of taking left and right turns: From given tree
 $T$, create a tree that, in the root, contains the tree $T$. For each element,
 left/right child nodes of element contain the left/right subtree of the parent

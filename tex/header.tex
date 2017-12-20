@@ -3,19 +3,74 @@
 \usepackage[sc]{mathpazo}
 \linespread{1.05}
 \usepackage[T1]{fontenc}
-\usepackage{fancyvrb}
-\usepackage{listings}
+\usepackage{marginnote}
+\usepackage{wasysym}
+\let\Square\undefined
+\usepackage{bbding}
+\usepackage{keyval,xparse}
+\usepackage{multido}
 \usepackage{hyperref}
+
+\setlength{\marginparpush}{0pt}
+\setlength{\marginparsep}{2em}
 
 \title{Exercise Yourself a Haskell \\ \vspace{1em} \Large (For Great Profit)}
 \date{}
 %\author{People of the Internet}
 
+%% Macro definitions here!
+
 \newcommand{\startExercises}{\begin{description}}
 \newcommand{\finishExercises}{\end{description}}
-\newcommand{\exercise}[3]{\item[#2] #3}
+
+\makeatletter
+\define@key{exerciseTag}{stars}{\def\exerciseTag@stars{#1}}
+\define@key{exerciseTag}{lambdas}{\def\exerciseTag@lambdas{#1}}
+\define@key{exerciseTag}{pencils}{\def\exerciseTag@pencils{#1}}
+\define@key{exerciseTag}{trees}{\def\exerciseTag@trees{#1}}
+\DeclareDocumentCommand{\exerciseTag}{m}{%
+  \begingroup%
+  % ========= KEY DEFAULTS + new ones =========
+  \setkeys{exerciseTag}{stars={0},lambdas={0},pencils={0},trees={0},#1}%
+  % First arg: \mm@first \par
+  % Second arg: \mm@second \par
+  % Third arg: \mm@third \par
+  % Last arg: \mm@last
+  \marginnote{
+  \multido{}{\exerciseTag@stars}{\FiveStar}
+  \multido{}{\exerciseTag@pencils}{\PencilLeftDown}
+  \multido{}{\exerciseTag@lambdas}{{\large $\lambda$}}
+  }[0pt]
+  %\multido{\exerciseTag@lambdas}{$\mathbf{\lambda}$}
+  \endgroup%
+}
+\makeatother
+\newcommand{\exercise}[3]{\item[#2] \exerciseTag{#1} #3}
+
+%% Start the main document. Write the book prologue down below.
 
 \begin{document}
+\sloppy
+
 \maketitle
+
 This book is intended as a collaborative project, everyone is welcome to
 contribute at \url{https://github.com/exaexa/EYAH}.
+
+For the reasons of great success, it is organized into chapters depending on
+the way the reader is willing to exercise. First chapter is meant to accompany
+the reading of the book `Learn Yourself a Haskell.' Second chapter are
+collected exercises used on university course in middle Europe. We expect
+parsing- and lens-oriented chapters to materialize.
+
+Some exercises are marked by a variable number of badges:
+\begin{itemize}
+\item Stars \FiveStar\ represent an exercise that is worthy a bit of thinking.
+\item Pencils \PencilLeftDown\ represent an exercise that attempts to improve
+the technical background of the reader, at the cost of some writing or some
+purely technical work with the source.
+\item Lambdas {\large $\lambda$} mark some exercises that carry some reasonable
+connection to underlying logic or $\lambda$-calculus.
+\item (other tags to appear)
+\end{itemize}
+

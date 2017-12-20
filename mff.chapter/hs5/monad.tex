@@ -1,4 +1,4 @@
-\exercise{level=4}{Random state}{%
+\exercise{pencils=2}{Random state}{%
 Implement a monad that keeps random number generator state. Use e.g. the
 generator from \texttt{man 3 rand} (see \autoref{fig:man3rand}).
 
@@ -36,7 +36,7 @@ int myrand(void) {
 \label{fig:man3rand}
 \end{figure}
 
-\exercise{level=4}{Random bind}{%
+\exercise{lambdas=1,stars=1}{Random bind}{%
 Similarly as with \texttt{randSeq} from the previous exercise, implement:
 
 \texttt{randThen :: RandM a -> (a -> RandM b) -> RandM b}
@@ -48,20 +48,20 @@ computation, to simulate that the computations are sequenced.
 
 Observe the similarity with \texttt{andThen}.
 }
-\exercise{level=4}{Random return}{%
+\exercise{}{Random return}{%
 Write a function \texttt{randRet} that takes a value and returns a random
 computation which does not change the random seed, but returns the given value.
 }
-\exercise{level=4}{Random monad}{%
+\exercise{lambdas=1}{Random monad}{%
 Using \texttt{randThen} and \texttt{randRet}, define the \texttt{Monad} instance of \texttt{RandM}.
 }
-\exercise{level=3}{Compute $\pi$}{%
+\exercise{stars=1}{Compute $\pi$}{%
 Using your new monad for generating random numbers, establish the value of
 $\pi$. Preferred method is to throw a pile of small stones on a square area
 with inscribed circle, and count the ratio of stones that landed inside of the
 circle.
 }
-\exercise{level=4}{State}{
+\exercise{lambdas=1,pencils=1}{State}{
 The RandM monad stores a single integer with state. We can generalize the concept to any type of the state:
 
 \texttt{data StateM s a = StateChange (s -> (a,s))}

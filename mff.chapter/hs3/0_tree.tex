@@ -1,39 +1,41 @@
-\exercise{level=1}{Tree-ish data}{
+\exercise{}{Tree-ish data}{
 Find any good representation of a binary search tree with elements of given
 type, and write \texttt{data} with its definition.
 }
-\exercise{level=1}{Tree to list}{
+\exercise{}{Tree to list}{
 Define a function that converts your tree to a list of elements (in
 tree-traversing order).
 }
-\exercise{level=1}{List to tree}{
+\exercise{}{List to tree}{
 Make a balanced tree out of a list. Note that there are two approaches to the balance:
 \begin{itemize}
 \item Exactly splitting the incoming list at the middle and recursing to subtrees, which requires knowing the length of the list.
 \item Building the tree iteratively from the `lower left', which produces a slightly different kind of balance and does not require measuring the list before splitting it.
 \end{itemize}
 }
-\exercise{level=1}{List halving}{
+\exercise{stars=1}{List halving}{
 If you already haven't, create a function that splits the list roughly in
-half without using integers or \texttt{length}.
+half \emph{without} using any integers or \texttt{length}.
 }
-\exercise{level=1}{Tree size}{
+\exercise{}{Tree size}{
 Write a function that measures the number of elements in your tree.
 }
-\exercise{level=1}{Tree find}{
+\exercise{}{Tree find}{
 Write a function that returns a \texttt{Bool} that says whether a value is contained in a tree
 }
-\exercise{level=2}{Traversing trees in order behaves like what?}{
+\exercise{}{Traversing trees in order behaves like what?}{
 Derive an instance of \texttt{Foldable} for your tree and check that
 \texttt{foldr}, \texttt{length}, \texttt{elem} and similar functions that work
 on lists also work on your tree now.
 }
-\exercise{level=3}{Map tree?}{
-Try to define a \texttt{map} that would work on your tree. Why the standard \texttt{map} does not work just with \texttt{Foldable} instances?
+\exercise{stars=2}{Map tree?}{
+Try to define a version of \texttt{map} called \texttt{mapTree} that would work
+on your tree. Why the standard \texttt{map} does not work just with
+\texttt{Foldable} instances?
 
 You can compare your findings with \texttt{foldMap} definition.
 }
-\exercise{level=2}{$n$-th tree element}{
+\exercise{pencils=1}{$n$-th tree element}{
 Extract $n$-th element of a tree (in the traversing order). If there is no such
 element, return Nothing.
 
@@ -42,7 +44,7 @@ Compare the efficiency and failure modes of ``specialized'' implementation
 \texttt{Foldable}-derived version that uses \texttt{toList} and operator
 \texttt{(!!)}.
 }
-\exercise{level=3}{$k$-th foldable}{
+\exercise{pencils=1}{$k$-th foldable}{
 If you didn't do it yet, rewrite operator \texttt{(!!)} to work on
 \texttt{Foldable}. Convert your solution to a point-free one, preferably using
 the composition operator.

@@ -1,24 +1,24 @@
-\exercise{level=0}{Simple I/O}{
+\exercise{}{Simple I/O}{
 Put together a haskell program with function \texttt{main} that reads a line of
 text and writes it back to the user, and compile it using \texttt{ghc}. Use
 functions \texttt{getLine} and \texttt{putStrLn}.
 }
-\exercise{level=0}{Formatted output}{
+\exercise{}{Formatted output}{
 Print out some list of elements. Because the list is not a string, you will
 need \texttt{show} that converts some types to a string. \footnote{Combination of \texttt{putStrLn} and \texttt{show} is called \texttt{print}.}
 }
-\exercise{level=0}{Formatted input}{
+\exercise{}{Formatted input}{
 Just as \texttt{show} converts `anything' to String, \texttt{read} converts String to anything. Use it to read a Haskell-formatted list from input (for feeding it into some other function from this lesson).
 
 How does \texttt{read} know what type it should return?
 }
-\exercise{level=1}{Computer thinks (a number)}{
+\exercise{}{Computer thinks (a number)}{
 Write a program where the computer thinks a number, user guesses it, and
 computer tells him whether he guessed just right, too high or too low.
 
 Use \texttt{r <- getStdRandom (randomR (1,10))} to get random values.
 }
-\exercise{level=1}{Humans can cheat}{
+\exercise{pencils=1}{Humans can cheat}{
 Write the same program in the opposite direction --- the user thinks a number
 and computer guesses it. Include an angry reaction of the computer if the human
 attempts to cheat.

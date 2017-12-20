@@ -1,25 +1,25 @@
-\exercise{level=0}{filter2}{%
+\exercise{}{filter2}{%
 Function \texttt{filter} removes elements that do not match certain condition
 from a list. Using it, write a similar function \texttt{filter2} that returns a
 pair of lists --- first list contain elements that satisfy the condition,
 second list contains the rest of the elements.
 }
-\exercise{level=1}{filter2+}{%
+\exercise{}{filter2+}{%
 If you have used two \texttt{filter} `calls' in the previous function, try
 rewriting \texttt{filter2} not to use \texttt{filter}, and, specifically, to
 only evaluate the condition \emph{once} for each element of the list.
 }
-\exercise{level=1}{Run-Length encoding}{%
+\exercise{pencils=1}{Run-Length encoding}{%
 Write a function that converts a list to run-length encoded form --- this is a kind of compression if you know that the list contains large subsequences of equal elements. For example $[1,1,1,2,5,5,5,3,3,3,3]$ should be converted to $[(1,3),(2,1),(5,3),(3,4)]$.
 }
-\exercise{level=1}{RLE 2}{%
+\exercise{}{RLE 2}{%
 Check that your RLE function works on infinite lists (producing infinite compressed lists, of course):
 
 \texttt{take 10 \$ rle \$ repeat [1,1,1,1,4,4]}
 
 If not, fix it.
 }
-\exercise{level=0}{RLE 3}{%
+\exercise{stars=1}{RLE 3}{%
 You can \texttt{import Data.List} to use the function \texttt{group}. Using it,
 reimplement your RLE function as a oneliner.
 }
