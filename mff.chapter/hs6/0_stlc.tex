@@ -1,4 +1,4 @@
-\exercise{}{Types}{Define a language of types as
+\exercise{}{Types}{Let's define a language of types as
 $$ T = T \rightarrow T | t_i\qquad(\forall i) $$
 Overload the functions for substituting other types and getting free variables
 from such expressions.
@@ -8,6 +8,10 @@ substitution, that is generic over languages and variable identifiers, together
 with substitution composing function.}
 \exercise{lambdas=1}{Substitutions 2}{You are advised that the substitutions may
 behave as monoids. Is substitution composition commutative?}
-\exercise{pencils=2}{Unification}{Write a function \texttt{unify} that takes 2
+\exercise{lambdas=1}{Unification}{Write a function \texttt{unify} that takes 2
 type expression and either fails, or returns a substitution that makes them the
 same. Do not forget about occur-check.}
+\exercise{lambdas=2}{STLC}{Use the rules for simply-typed $\lambda$-calculus to
+infer a type of an expression.}
+\exercise{lambdas=1,stars=1}{$\lnot$STLC}{Find (programmatically) the smallest
+expression that does not have a STLC type.}
