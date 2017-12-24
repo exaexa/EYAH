@@ -26,10 +26,18 @@ Metadata currently consist of the "extra marker" icons that show up on the
 margins, marking some difficult or technical exercises.
 
 Available markers can be seen in `tex/header.tex`, they should now include:
+
 - stars
 - lambdas
 - pencils
+
 Do not use more than around 5 markers together.
+
+### Example
+```
+\exercise{stars=2}{Movement}{Make your computer literally jump 5 times. Haskell
+is a great language for that.}
+```
 
 ### Sorting exercises to sections
 
