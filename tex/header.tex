@@ -28,7 +28,7 @@
 \define@key{exerciseTag}{lambdas}{\def\exerciseTag@lambdas{#1}}
 \define@key{exerciseTag}{pencils}{\def\exerciseTag@pencils{#1}}
 \define@key{exerciseTag}{trees}{\def\exerciseTag@trees{#1}}
-\DeclareDocumentCommand{\exerciseTag}{m}{%
+\DeclareDocumentCommand\exerciseTag{m}{%
   \begingroup%
   % ========= KEY DEFAULTS + new ones =========
   \setkeys{exerciseTag}{stars={0},lambdas={0},pencils={0},trees={0},#1}%
