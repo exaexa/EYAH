@@ -9,7 +9,9 @@
 \usepackage{bbding}
 \usepackage{keyval,xparse}
 \usepackage{multido}
+\usepackage{xspace}
 \usepackage{hyperref}
+\usepackage{cleveref}
 
 \setlength{\marginparpush}{0pt}
 \setlength{\marginparsep}{2em}
@@ -30,24 +32,34 @@
 \define@key{exerciseTag}{trees}{\def\exerciseTag@trees{#1}}
 \DeclareDocumentCommand\exerciseTag{m}{%
   \begingroup%
-  % ========= KEY DEFAULTS + new ones =========
   \setkeys{exerciseTag}{stars={0},lambdas={0},pencils={0},trees={0},#1}%
-  % First arg: \mm@first \par
-  % Second arg: \mm@second \par
-  % Third arg: \mm@third \par
-  % Last arg: \mm@last
   \marginnote{
   \multido{}{\exerciseTag@stars}{\FiveStar}
   \multido{}{\exerciseTag@pencils}{\PencilLeftDown}
   \multido{}{\exerciseTag@lambdas}{{\large $\lambda$}}
   }[0pt]
-  %\multido{\exerciseTag@lambdas}{$\mathbf{\lambda}$}
   \endgroup%
 }
 \makeatother
 \newcommand{\exercise}[3]{\item[#2] \exerciseTag{#1} #3}
 
-%% Start the main document. Write the book prologue down below.
+%% Autorefs
+
+\crefname{section}{\S}{\S}
+\crefname{subsection}{\S}{\S}
+\crefname{subsubsection}{\S}{\S}
+
+%\renewcommand{\sectionautorefname}{\S}
+%\renewcommand{\subsectionautorefname}{\S}
+%\renewcommand{\subsubsectionautorefname}{\S}
+
+%% Some relatively useful definitions
+
+\newcommand{\eg}{e.\,g.\xspace}
+\newcommand{\ie}{i.\,e.\xspace}
+\newcommand{\Eg}{E.\,g.\xspace}
+
+%% Start of the main document.
 
 \begin{document}
 \sloppy
@@ -61,19 +73,19 @@ For the reasons of great success, it is organized into chapters; the reader is
 free to choose whichever chapter seems most suitable to exercise. Contents of
 the chapters are usually meant as courses.
 
-The first chapter was originally meant to accompany the reading of the book
-`Learn Yourself a Haskell.' The second chapter are collected exercises used on
-university course in the middle of Europe. We expect parsing- and lens-oriented
-chapters to materialize.
+\Cref{chap:lyah} was originally meant to accompany the reading of the book
+`Learn Yourself a Haskell.' In \cref{chap:mff} you will find collected
+exercises as used on a university course in the middle of Europe. We also
+expect parsing- and lens-oriented chapters to materialize.
 
 Some exercises are marked by a variable number of badges:
 \begin{itemize}
-\item Stars \FiveStar\ represent an exercise that is worthy a bit of thinking.
-\item Pencils \PencilLeftDown\ represent an exercise that attempts to improve
-the technical background of the reader, at the cost of some writing or some
-purely technical work with the source.
-\item Lambdas {\large $\lambda$} mark some exercises that carry some reasonable
+\item Stars \FiveStar\ will be found near any exercise that is worthy a bit of
+thinking.
+\item Pencils \PencilLeftDown\ accompany exercises that attempt to improve
+the technical background of the reader, at the cost of some extra coding work.
+\item Lambdas {\large $\lambda$} mark exercises that carry some reasonable
 connection to underlying logic or $\lambda$-calculus.
-\item (other tags to appear)
 \end{itemize}
+Other tags will probably appear as well.
 
