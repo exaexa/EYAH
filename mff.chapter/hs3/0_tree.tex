@@ -41,8 +41,8 @@ element, return Nothing.
 
 Compare the efficiency and failure modes of ``specialized'' implementation
 (that recursively looks into the correct subtrees) with a
-\texttt{Foldable}-derived version that uses \texttt{toList} and operator
-\texttt{(!!)}.
+\texttt{Foldable}-derived version that uses \texttt{toList} (from
+\texttt{Data.Foldable} and operator \texttt{(!!)}.
 }
 \exercise{pencils=1}{$k$-th foldable}{
 If you didn't do it yet, rewrite operator \texttt{(!!)} to work on

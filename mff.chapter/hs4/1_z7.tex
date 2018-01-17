@@ -4,7 +4,6 @@ to allow using standard operators with elements $Z_7$.\footnote{In $Z_7$, all
 operations behave like on integers modulo 7.}
 }
 
-
 \exercise{}{Smaller cyclic groups}{
 If you haven't already, redefine the whole instance \texttt{Num Z7} as
 point-free: That is best done by using a `lifting' function that takes an
@@ -15,13 +14,15 @@ See an excerpt from the target instance definition in \cref{fig:z7instance}.
 \begin{figure}
 \centering
 \begin{minipage}{.6\textwidth}
+\begin{figlisting}
 \begin{verbatim}
 instance Num Z7 where
   (+) = z7lift2 (+)
   (*) = z7lift2 (*)
   negate = z7lift1 negate
   ...
-\end{verbatim}\end{minipage}
+\end{verbatim}
+\end{figlisting}\end{minipage}
 \caption{A foolproof way to lift the operators.}
 \label{fig:z7instance}
 \end{figure}

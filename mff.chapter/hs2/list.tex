@@ -12,7 +12,7 @@ Define your own version of function \texttt{zipWith} using \texttt{map}, \texttt
 \exercise{}{Tuples and zips}{
 In the same way, define your own version of \texttt{zip} using \texttt{zipWith}.
 }
-\exercise{pencils=2}{Zips.Tuples}{
+\exercise{pencils=2,stars=1}{Zips.Tuples}{
 You can compose functions using the dot operator. \texttt{(f.g) x} is defined
 to be the same as \texttt{f (g x)}. Redefine your version of \texttt{zipWith}
 using this operator so that there is no variable for the list in the
@@ -25,9 +25,9 @@ about confusing it with pointless style.}:
 Define your own version of \texttt{map} using \texttt{foldr}.
 
 Find out an expression where your definition of \texttt{map} would not work if
-you had used \texttt{foldl} for the definition.
+you would have used \texttt{foldl} for the definition.
 }
 \exercise{stars=1}{Parameter order}{
 Search for reasons why arguments of standard fold-type functions are ordered as
-they are. (I.e. not like \texttt{foldl [1,2,3] (+) 0}).
+they are (\ie not like \texttt{foldl [1,2,3] (+) 0}).
 }

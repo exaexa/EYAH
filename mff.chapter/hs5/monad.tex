@@ -25,12 +25,14 @@ seed, runs the first \texttt{RandM} and feeds the resulting seed to the second
 \begin{figure}
 \centering
 \begin{minipage}{.9\textwidth}
+\begin{figlisting}
 \begin{verbatim}
 int myrand(void) {
     next = next * 1103515245 + 12345;
     return((unsigned)(next/65536) % 32768);
 }
 \end{verbatim}
+\end{figlisting}
 \end{minipage}
 \caption{A relatively successful random number generator.}
 \label{fig:man3rand}
